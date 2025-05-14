@@ -1,0 +1,90 @@
+.header-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tilda-header {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    color: #9ecbff;
+    font-weight: bold;
+}
+
+.tilda-subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-top: 0;
+}
+
+.stChatMessage {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stChatMessage[data-testid="user-message"] {
+    background-color: #2a2d4a;
+}
+
+.stChatMessage[data-testid="assistant-message"] {
+    background-color: #283844;
+}
+
+.stTextInput>div>div>input {
+    background-color: #363755;
+    color: white;
+    border: 1px solid #4c4d6d;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.stTextInput>div>div>input:focus {
+    border-color: #9ecbff;
+    box-shadow: 0 0 0 1px #9ecbff;
+}
+
+.stButton>button {
+    background-color: #4c4d6d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    transition: background-color 0.3s;
+}
+
+.stButton>button:hover {
+    background-color: #6063a0;
+}
+
+.stSpinner>div {
+    border-color: #9ecbff transparent transparent transparent;
+}
+
+.calendar-item {
+    padding: 10px;
+    border-left: 3px solid #9ecbff;
+    margin-bottom: 10px;
+    background-color: rgba(158, 203, 255, 0.1);
+    border-radius: 5px;
+}
+
+.event-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #70c1b3;
+}
+
+@media (max-width: 768px) {
+    .tilda-header {
+        font-size: 2rem;
+    }
+    
+    .tilda-subtitle {
+        font-size: 1rem;
+    }
+}
