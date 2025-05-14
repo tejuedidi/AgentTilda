@@ -98,14 +98,12 @@ def list_events_on_day(calendar_name, date_str, timezone='America/Los_Angeles'):
 
     tz = pytz.timezone(timezone)
     try:
-        # Try to parse the date in both formats
         date = datetime.strptime(date_str, "%Y-%m-%d") # Format YYYY-MM-DD
     except ValueError:
         date = datetime.strptime(date_str, "%m-%d-%Y") # Format MM-DD-YYYY
     start_of_day = tz.localize(datetime.combine(date, datetime.min.time()))
     end_of_day = tz.localize(datetime.combine(date, datetime.max.time()))
 
-    # Convert to RFC3339 format
     time_min = start_of_day.isoformat()
     time_max = end_of_day.isoformat()
 
@@ -174,8 +172,8 @@ def delete_event_by_title(title, event_date=None):
     Delete an event by title (and optional date) across all calendars.
     
     Parameters:
-    - title (str): Title of the event to match.
-    - event_date (str or datetime, optional): Filter events by date (e.g., '2025-05-15')
+    - title (str): The title of the event to match.
+    - event_date (str or datetime): An optional filter for events by date.
     """
     calendars = list_calendars()
     matched = False
@@ -215,19 +213,17 @@ def delete_event_by_title(title, event_date=None):
         print(f"No event titled '{title}' found.")
     return matched
 
-from datetime import datetime
-
 def update_event(original_title, event_date=None, new_title=None, new_start=None, new_end=None, new_description=None):
     """
     Update an event by its title (and optional date) across all calendars.
 
     Parameters:
-    - original_title (str): Current title of the event.
-    - event_date (str or datetime, optional): Filter to a specific date ('YYYY-MM-DD').
-    - new_title (str, optional): New title for the event.
-    - new_start (str or datetime, optional): New start datetime in ISO format.
-    - new_end (str or datetime, optional): New end datetime in ISO format.
-    - new_description (str, optional): New description.
+    - original_title (str): The current title of the event.
+    - event_date (str or datetime): An optional filter to a specific date ('YYYY-MM-DD').
+    - new_title (str): An optional new title for the event.
+    - new_start (str or datetime): An optional new start datetime in ISO format.
+    - new_end (str or datetime): An optional new end datetime in ISO format.
+    - new_description (str): An optional new description.
     """
     calendars = list_calendars()
     matched = False
@@ -253,7 +249,6 @@ def update_event(original_title, event_date=None, new_title=None, new_start=None
                 if event_title == original_title.strip().lower():
                     print(f"Found event '{original_title}' in calendar '{cal['name']}'")
 
-                    # Update fields
                     if new_title:
                         event["summary"] = new_title
                     if new_description is not None:

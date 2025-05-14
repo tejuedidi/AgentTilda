@@ -1,14 +1,13 @@
+import os
+import pytz
 import streamlit as st
 from agent import calendar_agent
-from dotenv import load_dotenv
-import pytz
-from swarm import Swarm
-import os
 from datetime import datetime
+from dotenv import load_dotenv
+from swarm import Swarm
 from pathlib import Path
 
 def initialize_session_states():
-    """Initialize session state variables if they don't exist"""
     if 'messages' not in st.session_state:
         st.session_state.messages = []
     if 'calendar_context' not in st.session_state:
