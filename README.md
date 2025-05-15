@@ -41,7 +41,7 @@ streamlit run app.py
 ## Limitations
 Currently, users must explicitly provide the event title and/or date when updating or viewing events. The assistant relies on this input to accurately identify and retrieve the correct event.
 
-## Future Improvements
+## Roadmap
 * Voice command support to make the assistant more intuitive and accessible.
 * Natural language date parsing (e.g., "next Friday" or "in two days") to improve flexibility.
 * Support recurring events in the future, to support standard calendar workflows.
